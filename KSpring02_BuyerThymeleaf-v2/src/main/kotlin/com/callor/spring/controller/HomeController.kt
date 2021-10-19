@@ -9,6 +9,7 @@ import org.springframework.ui.Model
 import org.springframework.ui.set
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseBody
 
 @Controller
@@ -48,8 +49,6 @@ class HomeController {
         val userList = bService.selectAll()
         // model.addAttribute("USERS",userList)
         model["USERS"] = userList
-
-
         return "home"
     }
 
@@ -68,6 +67,14 @@ class HomeController {
     }
 
 
+    @RequestMapping(value=["/detail"],method=[RequestMethod.GET])
+    fun detail( model:Model, @RequestParam("userid") userid:String):String {
+
+        val buyer = bService.findById(userid)
+        model["BUYER"] = buyer
+        return "detail" // detail.html 을 열어라
+
+    }
 
 
 }

@@ -22,9 +22,11 @@ $(()=>{
     //    const id = $(this).data("id") // data-id 를 getter 하기
     //    location.href="/detail?userid=" + id
     // })
-    
-    function() tableClickHandler {
-        const id $(this).data("id")
+
+    // const tableClickHandler = () =>{  }
+    // const tableClickHandler = function() {  }
+    function tableClickHandler() {
+        const id = $(this).data("id")
         location.href = "/detail?userid=" + id
     }
     $("table.buyer_list tr").on("click", tableClickHandler)
