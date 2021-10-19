@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+header {
+    background-color: aqua;
+    padding:2rem;
+    color:white;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    background-color: cadetblue;
+}
+
+nav li {
+    display: inline-block;
+    padding:15px 20px;
+    color:white;
+    cursor:pointer;
+}
+
+nav li.login {
+    margin-left: auto;
+}
+
+nav li:hover  {
+    background-color: aliceblue;
+    color:blue
+}
+
+
+table.buyer_list {
+    width: 80%;
+    margin:10px auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table.buyer_list th {
+    background-color: #ddd;
+}
+
+table.buyer_list th, table.buyer_list td {
+    border-bottom: 1px solid #ddd;
+    padding:1em;
+    text-align: center;
+}
+
+
+
+
+
