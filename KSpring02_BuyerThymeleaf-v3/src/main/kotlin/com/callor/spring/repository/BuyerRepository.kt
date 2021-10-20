@@ -2,11 +2,10 @@ package com.callor.spring.repository
 
 import com.callor.spring.models.Buyer
 import org.springframework.data.jpa.repository.JpaRepository
-import org.springframework.stereotype.Repository
 
 // 현재 BuyerRepository interface 를 bean 으로 등록하라
 // @Repository 는 선택적인 option
-@Repository
+//@Repository
 interface BuyerRepository:JpaRepository<Buyer,String> {
 
     /**

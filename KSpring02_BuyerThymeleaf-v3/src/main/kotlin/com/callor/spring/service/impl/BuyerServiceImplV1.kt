@@ -16,8 +16,8 @@ import kotlin.random.Random
 class BuyerServiceImplV1(val bRepo:BuyerRepository ):BuyerService {
 
     // setter 주입으로 와이어링 하기
-    @Autowired
-    private lateinit var bDao : BuyerRepository
+//    @Autowired
+//    private lateinit var bDao : BuyerRepository
 
     // 현재 BuyerServiceImplV1 에서 사용할 가상 데이터를
     // 선언하기
@@ -72,7 +72,7 @@ class BuyerServiceImplV1(val bRepo:BuyerRepository ):BuyerService {
     }
 
     override fun insert(buyer: Buyer): Buyer {
-        return bDao.save(buyer)
+        return bRepo.save(buyer)
     }
 
     override fun delete(userid: String): Buyer {
