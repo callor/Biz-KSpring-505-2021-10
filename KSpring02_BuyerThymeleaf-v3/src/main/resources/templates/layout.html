@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet"
+          type="text/css"
+          th:href="@{/static/css/main.css}">
+    <link rel="stylesheet"
+          type="text/css"
+          th:href="@{/static/css/detail.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/static/js/list.js"></script>
+    <title>나라상사 고객관리</title>
+</head>
+<body>
+<th:block th:replace="fragment/headerAndFooter :: headerFragment"></th:block>
+<th:block th:replace="fragment/headerAndFooter :: navFragment"></th:block>
+
+<th:block layout:fragment="content"></th:block>
+
+<th:block th:replace="fragment/headerAndFooter :: footerFragment"></th:block>
+</body>
+</html>
