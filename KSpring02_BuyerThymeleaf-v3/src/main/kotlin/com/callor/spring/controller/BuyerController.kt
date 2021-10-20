@@ -34,12 +34,11 @@ class BuyerController(val bService:BuyerService) {
 
     }
 
-    @ResponseBody
     @RequestMapping(value=["/insert"],method=[RequestMethod.GET])
-    fun insert(): Buyer {
-        val insertBuyer = ConfigData.BUYER_LIST[0]
-        bService.insert(insertBuyer)
-        return insertBuyer
+    fun insert(): String {
+//        val insertBuyer = ConfigData.BUYER_LIST[0]
+//        bService.insert(insertBuyer)
+        return "buyer/write"
     }
 
 }

@@ -41,6 +41,10 @@ footer {
     padding:1rem;
 }
 
+div.btn_box {
+    text-align:right;
+}
+
 table.buyer_list {
     width: 80%;
     margin:10px auto;

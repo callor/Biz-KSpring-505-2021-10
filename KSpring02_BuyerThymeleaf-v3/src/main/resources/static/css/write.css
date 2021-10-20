@@ -1,0 +1,33 @@
+section.buyer_write {
+    width:80vw;
+    margin:10px auto;
+}
+/* label input 감싸는 box */
+section.buyer_write div {
+    width:80%;
+    margin:5px auto;
+}
+
+section.buyer_write label,
+section.buyer_write input {
+    display:inline-block;
+    padding:8px;
+    margin:5px;
+    border:none;
+    outline:none;
+}
+section.buyer_write label {
+    width:30%;
+    text-align:right;
+}
+
+section.buyer_write input {
+    width:60%;
+    border:1px solid #ddd;
+}
+
+section.buyer_write button:last-of-type {
+    margin-right : calc(10% - 16px)
+}
+
+
