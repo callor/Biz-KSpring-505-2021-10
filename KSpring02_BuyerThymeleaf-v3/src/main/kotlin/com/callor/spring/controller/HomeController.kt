@@ -1,6 +1,6 @@
 package com.callor.spring.controller
 
-import com.callor.spring.ConfigString
+import com.callor.spring.ConfigData
 import com.callor.spring.models.Buyer
 import com.callor.spring.service.BuyerService
 import com.callor.spring.service.impl.BuyerServiceImplV1
@@ -43,14 +43,13 @@ class HomeController {
      */
     @RequestMapping(value=["/"],method=[RequestMethod.GET])
     fun home(model:Model) :String {
+        println( ConfigData.APP_NAME )
+        println( ConfigData.APP_VERSION )
 
-        println( ConfigString.APP_NAME )
-        println( ConfigString.APP_VERSION )
-
-        val userList = bService.selectAll()
+//        val userList = bService.selectAll()
         // model.addAttribute("USERS",userList)
-        model["USERS"] = userList
-        return "home"
+//        model["USERS"] = userList
+        return "redirect:/buyer/list"
     }
 
     /**
@@ -67,23 +66,6 @@ class HomeController {
         return bService.selectAll()
     }
 
-
-    @RequestMapping(value=["/detail"],method=[RequestMethod.GET])
-    fun detail( model:Model, @RequestParam("userid") userid:String):String {
-
-        val buyer = bService.findById(userid)
-        model["BUYER"] = buyer
-        return "detail" // detail.html 을 열어라
-
-    }
-
-    @ResponseBody
-    @RequestMapping(value=["/insert"],method=[RequestMethod.GET])
-    fun insert():Buyer {
-        val insertBuyer = BuyerServiceImplV1.BUYER_LIST[0]
-        bService.insert(insertBuyer)
-        return insertBuyer
-    }
 
 
 

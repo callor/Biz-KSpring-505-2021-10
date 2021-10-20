@@ -101,6 +101,7 @@
 					<dependency>
 						<groupId>org.jetbrains.kotlin</groupId>
 						<artifactId>kotlin-maven-allopen</artifactId>
+								 <!-- 1.5.10 -->
 						<version>${kotlin.version}</version>
 					</dependency>
 				</dependencies>
