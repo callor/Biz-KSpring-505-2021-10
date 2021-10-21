@@ -3,6 +3,18 @@
       layout:decorator="@{/layout}"
 >
 <section layout:fragment="content" class="buyer_detail">
+    <script th:inline="javascript">
+        /*
+          javascript 코드에서 thymeleaf template 변수를 사요하기 위해서는
+          html 에서 해당 값을 js 변수로 다시 변환 시켜줘야 한다
+          // var rootPath = ${context.request.pageRequst}
+
+          이 변환 작업을 하기 위해서는 script 에
+          th:line="javascript"  속성을 추가한다
+        */
+        const userid = /*[[ ${BUYER.userid} ]]*/ null
+    </script>
+
     <div>
         <label >ID</label><span th:text="${BUYER.userid}">B0001</span>
         <label>이름</label><span  th:text="${BUYER.name}">홍길동</span>
@@ -12,7 +24,7 @@
         <label>주소</label><span  th:text="${BUYER.address}">서울시</span>
     </div>
     <div>
-        <button>고객정보 수정</button>
-        <button>고객정보 삭제</button>
+        <button class="btn_update">고객정보 수정</button>
+        <button class="btn_delete btn_warring">고객정보 삭제</button>
     </div>
 </section>

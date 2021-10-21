@@ -1,0 +1,36 @@
+div.btn_box {
+    text-align:right;
+}
+button {
+    display:inline-block;
+    padding:10px 15px;
+    border:none;
+    outline:none;
+    margin:0px 5px;
+    border-radius:5px;
+}
+button:hover {
+    box-shadow : 2px 2px 2px rgba(0,0,0,0.6);
+}
+
+button.btn_insert, button.btn_save, button.btn_update {
+    color:white;
+    background-color:blue;
+}
+
+button.btn_list {
+    color:white;
+    background-color:green;
+}
+
+/*
+!important : 이전에 어떤 style 이 지정되었든 상관없이
+현재 지정하는 style 로 강제 지정하라
+*/
+button.btn_warring {
+    color:white !important;
+    background-color:red !important;
+}
+
+
+

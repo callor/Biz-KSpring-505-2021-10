@@ -3,14 +3,13 @@ package com.callor.spring.controller
 import com.callor.spring.ConfigData
 import com.callor.spring.models.Buyer
 import com.callor.spring.service.BuyerService
-import com.callor.spring.service.impl.BuyerServiceImplV1
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
-import org.springframework.ui.set
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
-import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseBody
 
 @Controller
@@ -31,7 +30,6 @@ class HomeController {
      */
     @Autowired
     private lateinit var bService:BuyerService
-
     /**
      * Spring 일반 Controller 에서
      * method 가 문자열을 return 하면
@@ -45,7 +43,6 @@ class HomeController {
     fun home(model:Model) :String {
         println( ConfigData.APP_NAME )
         println( ConfigData.APP_VERSION )
-
 //        val userList = bService.selectAll()
         // model.addAttribute("USERS",userList)
 //        model["USERS"] = userList

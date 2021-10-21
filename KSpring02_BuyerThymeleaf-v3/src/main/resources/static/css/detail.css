@@ -36,25 +36,6 @@ section.buyer_detail span {
     width:55%;
 }
 
-button {
-    display:inline-block;
-    padding:10px 15px;
-    border:none;
-    outline:none;
-    margin:0px 5px;
-    border-radius:5px;
-}
 
-button:hover {
-    box-shadow : 2px 2px 2px rgba(0,0,0,0.6);
-}
-section.buyer_detail button:nth-of-type(1) {
-    background-color:blue;
-    color:white;
-}
-section.buyer_detail button:nth-of-type(2) {
-    background-color:red;
-    color:white;
-}
 
 

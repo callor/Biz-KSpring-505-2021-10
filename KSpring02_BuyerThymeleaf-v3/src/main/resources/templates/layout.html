@@ -5,9 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0"/>
+    <script th:inline="javascript">
+        // 분리된 JS 코드에서 project ContextRoot 를 사용하기 위하여
+        // 미리 rootPath 를 만들어두자
+        const rootPath = /*[[@{/}]]*/ null
+    </script>
     <link rel="stylesheet"
           type="text/css"
           th:href="@{/static/css/main.css}">
+    <link rel="stylesheet"
+          type="text/css"
+          th:href="@{/static/css/button.css}">
     <link rel="stylesheet"
           type="text/css"
           th:href="@{/static/css/detail.css}">
@@ -15,7 +23,9 @@
           type="text/css"
           th:href="@{/static/css/write.css}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/static/js/list.js"></script>
+    <script th:src="@{/static/js/list.js}"></script>
+    <script th:src="@{/static/js/detail.js}"></script>
+    <script th:src="@{/static/js/write.js}"></script>
     <title>나라상사 고객관리</title>
 </head>
 <body>

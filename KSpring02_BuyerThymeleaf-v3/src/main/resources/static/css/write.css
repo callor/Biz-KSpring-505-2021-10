@@ -30,4 +30,16 @@ section.buyer_write button:last-of-type {
     margin-right : calc(10% - 16px)
 }
 
+section.buyer_write fieldset {
+    border:1px solid #aaa;
+    border-radius:10px;
+}
+
+section.buyer_write legend {
+    margin:50px;
+    /* top and bottom :10px, left and right : 30px */
+    padding:10px 30px;
+    font-weight : 900;
+    color:darkblue;
+}
 
