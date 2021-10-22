@@ -2,7 +2,7 @@
 <html lang="ko"
       xmlns:th = "http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="@{/layout}"
+      layout:decorator="~{/layout}"
 >
 
 <section layout:fragment="content">
@@ -13,7 +13,7 @@
             margin-bottom : 5px;
         }
     </style>
-    <table class="buyer_list">
+    <table class="list buyer_list">
         <thead>
         <tr>
             <th>고객ID</th>

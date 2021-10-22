@@ -1,8 +1,9 @@
 <html lang="ko"
-      xmlns:th="http://www.thymeleaf.org"
+      xmlns:th = "http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="@{/layout}"
+      layout:decorator="~{/layout}"
 >
+
 
 <section layout:fragment="content" class="buyer_write">
     <form method="POST" th:object="${BUYER}">

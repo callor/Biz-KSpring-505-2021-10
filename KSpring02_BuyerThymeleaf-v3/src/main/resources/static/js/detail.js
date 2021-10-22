@@ -10,7 +10,7 @@ $(function(){
             } else if(className.includes("btn_delete")) {
                 // alert(`delete ${userid}` )
                 href = `${href}/delete/${userid}`
-                if( !confirm("삭제할까요?") ) {
+                if(!confirm("삭제할까요?")) {
                     return false
                 }
             }

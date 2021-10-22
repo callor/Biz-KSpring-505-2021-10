@@ -30,7 +30,7 @@ $(function(){
 //        }
 //        alert(JSON.stringify(tagInform))
 
-        let href = "/"
+        let href = `${rootPath}/`
         if(text === "주문관리") {
             href += "order"
         } else if(text == "결제관리") {

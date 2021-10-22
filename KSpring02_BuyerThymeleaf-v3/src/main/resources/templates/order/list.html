@@ -1,0 +1,49 @@
+<html lang="ko"
+      xmlns:th = "http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}"
+>
+
+
+<section layout:fragment="content">
+    <style>
+        button.btn_insert {
+            margin-right:calc(20% - 16px);
+            margin-top:5px;
+            margin-bottom : 5px;
+        }
+    </style>
+    <table class="list order_list">
+        <thead>
+        <tr>
+            <th>SEQ</th>
+            <th>USER</th>
+            <th>상품명</th>
+            <th>단가</th>
+            <th>수량</th>
+            <th>금액</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="buyer_tr" th:each="SALE : ${SALES}" th:data-id="${SALE.seq}">
+            <td th:text="${SALE.seq}">SEQ</td>
+            <td th:text="${SALE.userid}">USER ID</td>
+            <td th:text="${SALE.pname}">상품명</td>
+            <td th:text="${SALE.amt}">단가</td>
+            <td th:text="${SALE.qty}">수량</td>
+            <td th:text="${SALE.total}">합계</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="btn_box"><button class="btn_insert">주문등록</button></div>
+    <script>
+    $(function(){
+        $("button.btn_insert").on("click",function(){
+            location.href ="/order/insert"
+        })
+      })
+    </script>
+
+</section>
+
+</html>

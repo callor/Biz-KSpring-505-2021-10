@@ -41,22 +41,6 @@ footer {
     padding:1rem;
 }
 
-table.buyer_list {
-    width: 80%;
-    margin:10px auto;
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-table.buyer_list th {
-    background-color: #ddd;
-}
-
-table.buyer_list th, table.buyer_list td {
-    border-bottom: 1px solid #ddd;
-    padding:1em;
-    text-align: center;
-}
 
 
 

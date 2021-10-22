@@ -12,11 +12,12 @@ import javax.transaction.Transactional
 
 // project 가 시작될때 무엇인가 실행해달라 
 @SpringBootConfiguration
-class DataInit {
+class BuyerDataInit {
 
     private val logger
-        = LoggerFactory.getLogger(DataInit::class.java)
+        = LoggerFactory.getLogger(BuyerDataInit::class.java)
 
+    // setter 주입방식
     @Autowired
     private lateinit var bDao : BuyerRepository
 
