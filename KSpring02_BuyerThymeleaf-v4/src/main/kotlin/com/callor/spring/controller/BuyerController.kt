@@ -21,13 +21,31 @@ class BuyerController(val bService: BuyerService) {
     // @GetMapping(name="/list")
     @RequestMapping(value = ["/list"], method = [RequestMethod.GET])
     fun list(model: Model): String {
-
         logger().debug("여기는 list 함수")
-
         val buyerList = bService.selectAll()
         model["BUYERS"] = buyerList
         return "buyer/list"
     }
+
+    @RequestMapping(value = ["/list/{page}"], method = [RequestMethod.GET])
+    fun list(model: Model,@PathVariable("page") page:String= "0"): String {
+
+        val intPage = try{
+            page.toInt()
+        } catch (e:Exception)
+        {
+            logger().debug("매개변수 오류~~")
+            0
+        }
+        logger().debug("여기는 page list 함수")
+        val buyerList = bService.selectWithPageable(intPage)
+
+        model["BUYERS"] = buyerList
+        return "buyer/list"
+
+    }
+
+
 
     // localhost:8080/buyer/detail
     @RequestMapping(value = ["/detail"], method = [RequestMethod.GET])

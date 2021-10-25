@@ -12,5 +12,6 @@ interface BuyerService {
     fun insert(buyer: Buyer): Buyer
     fun delete(userid: String)
     fun update(buyer: Buyer): Buyer
+    fun selectWithPageable(intPage: Int): Array<Buyer>
 
 }

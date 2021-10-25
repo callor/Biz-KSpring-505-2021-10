@@ -1,11 +1,13 @@
 package com.callor.spring.repository
 
 import com.callor.spring.models.Buyer
+import org.springframework.data.domain.Pageable
 import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.data.jpa.repository.Query
 
 // 현재 BuyerRepository interface 를 bean 으로 등록하라
 // @Repository 는 선택적인 option
-//@Repository
+// @Repository
 interface BuyerRepository:JpaRepository<Buyer,String> {
 
     /**
@@ -22,5 +24,7 @@ interface BuyerRepository:JpaRepository<Buyer,String> {
 
 //    fun findByUserName(userName:String) : Array<Buyer>
 
+    @Query("SELECT B FROM Buyer B")
+    fun findWithpagination(pageable: Pageable?) : List<Buyer>
 
 }
