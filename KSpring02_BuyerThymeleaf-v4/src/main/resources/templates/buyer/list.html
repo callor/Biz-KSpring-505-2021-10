@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th = "http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}"
+>
+
+<section layout:fragment="content">
+    <style>
+        button.btn_insert {
+            margin-right:calc(20% - 16px);
+            margin-top:5px;
+            margin-bottom : 5px;
+        }
+    </style>
+    <table class="list buyer_list">
+        <thead>
+        <tr>
+            <th>고객ID</th>
+            <th>이름</th>
+            <th>전화번호</th>
+            <th>주소</th>
+            <th>담당자명</th>
+            <th>담당자전화번호</th>
+            <th>매출합계(만원)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="buyer_tr" th:each="BUYER : ${BUYERS}" th:data-id="${BUYER.userid}">
+            <td th:text="${BUYER.userid}">B001</td>
+            <td th:text="${BUYER.name}">롯데상사</td>
+            <td th:text="${BUYER.tel}">02-222-9999</td>
+            <td th:text="${BUYER.address}">서울시 영등포구</td>
+            <td th:text="${BUYER.manager}">홍길동</td>
+            <td th:text="${BUYER.man_tel}">010-9999-8766</td>
+            <td th:text="${BUYER.buy_total}">91,000</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="btn_box"><button class="btn_insert">고객등록</button></div>
+    <script>
+    $(function(){
+        $("button.btn_insert").on("click",function(){
+            location.href ="/buyer/insert"
+        })
+      })
+    </script>
+
+</section>
+
+</html>

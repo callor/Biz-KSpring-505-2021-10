@@ -1,0 +1,7 @@
+# DB connection setting
+spring:
+  datasource:
+    driver-class-name: "com.mysql.cj.jdbc.Driver"
+    url: "jdbc:mysql://localhost:3306/naraDB"
+    username: root
+    password: "!Biz12341234"
