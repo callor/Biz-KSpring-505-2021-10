@@ -5,13 +5,22 @@
       layout:decorator="~{/layout}"
 >
 
-<section layout:fragment="content">
+<section layout:fragment="content" class="buyer_list">
     <style>
         button.btn_insert {
             margin-right:calc(20% - 16px);
             margin-top:5px;
             margin-bottom : 5px;
         }
+
+        section.buyer_list div.nextPage {
+            background-color: green;
+            color:white;
+            padding:1rem;
+            text-align: center;
+            cursor:pointer;
+        }
+
     </style>
     <table class="list buyer_list">
         <thead>
@@ -37,6 +46,7 @@
         </tr>
         </tbody>
     </table>
+    <div class="nextPage">더 보기</div>
     <div class="btn_box"><button class="btn_insert">고객등록</button></div>
     <script>
     $(function(){
