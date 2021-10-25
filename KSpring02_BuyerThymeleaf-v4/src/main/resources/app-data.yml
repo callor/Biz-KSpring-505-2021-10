@@ -1,0 +1,7 @@
+# com.callor.spring.student-file=student.txt
+com:
+  callor:
+    spring:
+      student-file: "student.txt"
+      app-name: "나의 첫 Boot 프로젝트"
+      app-version: 1.0

@@ -2,5 +2,8 @@
 logging:
   level:
     root: info
-    com.callor.spring.controller: debug
-    com.callor.spring.service: debug
+    com.callor.spring:
+      config: debug
+      controller: debug
+      service: debug
+      repository: debug

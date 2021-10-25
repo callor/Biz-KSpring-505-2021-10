@@ -1,26 +1,28 @@
 package com.callor.spring.controller
 
-import com.callor.spring.ConfigData
+import com.callor.spring.config.logger
 import com.callor.spring.models.Buyer
 import com.callor.spring.service.BuyerService
-import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.ui.set
-import org.springframework.web.bind.annotation.*
+import org.springframework.web.bind.annotation.PathVariable
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestMethod
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.servlet.mvc.support.RedirectAttributes
 
 @Controller
 @RequestMapping(value = ["/buyer"])
 class BuyerController(val bService: BuyerService) {
 
-    private val logger = LoggerFactory.getLogger(BuyerController::class.java)
+//    private val logger = LoggerFactory.getLogger(BuyerController::class.java)
 
     // @GetMapping(name="/list")
     @RequestMapping(value = ["/list"], method = [RequestMethod.GET])
     fun list(model: Model): String {
 
-        logger.debug("여기는 list 함수")
+        logger().debug("여기는 list 함수")
 
         val buyerList = bService.selectAll()
         model["BUYERS"] = buyerList
@@ -92,7 +94,7 @@ class BuyerController(val bService: BuyerService) {
     @RequestMapping(value = ["/update/{userid}"], method = [RequestMethod.POST])
     fun update(redirectAttributes: RedirectAttributes, buyer: Buyer, @PathVariable("userid") userid: String): String {
 
-        logger.debug(buyer.toString())
+        logger().debug(buyer.toString())
         bService.update(buyer)
 
         /**

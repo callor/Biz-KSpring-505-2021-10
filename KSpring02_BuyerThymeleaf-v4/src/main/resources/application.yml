@@ -8,7 +8,8 @@ spring:
   config.import: >
     optional:classpath:app-dbms.yml,
     classpath:app-logger.yml,
-    classpath:app-jpa.yml
+    classpath:app-jpa.yml,
+    classpath:app-data.yml
   mvc:
     static-path-pattern: /static/**
   web:

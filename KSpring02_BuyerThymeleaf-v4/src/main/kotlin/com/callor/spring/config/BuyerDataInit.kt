@@ -24,8 +24,6 @@ class BuyerDataInit {
     val names
         = listOf("홍길동","이몽룡","성춘향","임꺽정","장보고")
 
-    @Bean
-    @Transactional
     fun initData():CommandLineRunner {
         return CommandLineRunner {
             for(num in 1..100) {
