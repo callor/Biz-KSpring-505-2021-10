@@ -1,0 +1,29 @@
+table.list {
+    width: 80%;
+    margin:10px auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table.list th {
+    background-color: #ddd;
+}
+
+table.list th, table.list td {
+    border-bottom: 1px solid #ddd;
+    padding:1em;
+    text-align: center;
+}
+
+table.list tr:nth-of-type(even) {
+    background-color:#ddd;
+}
+
+table.list tr:nth-of-type(n+1):hover {
+    cursor:pointer;
+    background-color:#bbb;
+}
+
+table.order_list tr:nth-of-type(n+1):hover {
+    background-color:orange !important;
+}

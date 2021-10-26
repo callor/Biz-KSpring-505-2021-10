@@ -1,0 +1,33 @@
+#Context Path
+server.servlet.context-path=/erp
+
+# classpath : spring src/main ??? ?? ??? ???? ?? ???
+spring.mvc.static-path-pattern=/static/**
+spring.web.resources.static-locations=classpath:static/
+spring.web.resources.add-mappings=true
+
+# DB connection setting
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/naraDB
+spring.datasource.username=root
+spring.datasource.password=!Biz12341234
+
+# JPA Setting
+spring.jpa.hibernate.ddl-auto=create
+
+# bulk date insert or update Batch Process Enable
+spring.jpa.hibernate.jdbc.batch_size=100
+spring.jpa.hibernate.order_insert=true
+spring.jpa.hibernate.order_update=true
+
+spring.jpa.database=mysql
+spring.jpa.database-plattform=org.hibernate.dialect.MySQL8Dialect
+
+# SQL logger
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+# logger Setting
+spring.output.ansi.enabled=ALWAYS
+logging.level.root=info
+logging.level.com.callor.spring=debug

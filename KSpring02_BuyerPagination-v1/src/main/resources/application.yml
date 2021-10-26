@@ -1,0 +1,21 @@
+#Context Path
+server.servlet.context-path: /erp
+
+# Azure
+# yaml 프로퍼티를 사용하여 properties 설정하기
+# classpath : spring src/main 폴더를 가리키는 키워드
+spring:
+  config.import: >
+    optional:classpath:app-dbms.yml,
+    classpath:app-logger.yml,
+    classpath:app-jpa.yml,
+    classpath:app-data.yml
+  mvc:
+    static-path-pattern: /static/**
+  web:
+    resources:
+      static-locations: classpath:static/
+      add-mappings: true
+  # logger Setting
+  output.ansi.enabled: ALWAYS
+
