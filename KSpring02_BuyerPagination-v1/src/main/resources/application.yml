@@ -1,4 +1,6 @@
 #Context Path
+# localhost:8080/buyer/list
+# localhost:8080/erp/buyer/list
 server.servlet.context-path: /erp
 
 # Azure

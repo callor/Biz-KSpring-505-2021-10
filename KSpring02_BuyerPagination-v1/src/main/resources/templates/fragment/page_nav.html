@@ -1,0 +1,41 @@
+<section class="page_nav" th:fragment="pageNav(PAGES)">
+    <style>
+        ul.page_body {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin:2rem auto;
+        }
+
+        li.page_item {
+            border:1px solid #DEE2E6;
+            padding:0.5rem 0.75rem;
+            color:#007BFF;
+        }
+    </style>
+
+    <!--
+        PAGES.numer : 선택한 page 번호
+        T(Math).floor() : 실수를 정수로 변환하기
+
+    -->
+    <ul class="page_body"
+        th:with="pageCount = 5,
+        startVar=${ T(Math).floor(PAGES.number / pageCount) * pageCount + 1 },
+        start=${startVar < PAGES.totalPages
+                ? startVar
+                : PAGES.totalPages},
+        last=${start + (pageCount - 1) < PAGES.totalPages
+                    ? start + (pageCount - 1)
+                    : PAGES.totalPages }"
+    >
+        <li class="page_item">처음</li>
+        <th:block th:each="page : ${#numbers.sequence(start,last)}">
+            <li class="page_item" th:text="${page}"></li>
+        </th:block>
+        <li class="page_item">끝</li>
+    </ul>
+
+
+</section>
