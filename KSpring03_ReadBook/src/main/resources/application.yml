@@ -1,0 +1,8 @@
+# Optional<List<String>> config = new Optional<List<String>>();
+#  config.add("classpath:app-jpa.yml")
+#  config.add("classpath:app-dbms.yml")
+spring:
+  config.import: >
+    optional:classpath:app-jpa.yml,
+    classpath:app-dbms.yml
+
