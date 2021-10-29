@@ -1,0 +1,33 @@
+<html lang="ko"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}"
+>
+<section layout:fragment="content" class="content">
+    <form class="readbook_write" method="POST">
+        <fieldset>
+            <legend>독서록 작성</legend>
+            <div class="input">
+                <input name="isbn" placeholder="ISBN"/>
+                <input name="title" placeholder="도서명"/>
+            </div>
+            <div class="input">
+                <label>읽은날짜: </label><input name="sdate" type="date"/>
+                <label>읽기시작: </label><input name="stime" type="time"/>
+                <label>읽기마침: </label><input name="etime" type="time"/>
+            </div>
+            <div class="input" >
+                <input name="subject" placeholder="생각 중독은 깊은 생각에 빠져 주위를 돌아보지 못하는 것이다"/>
+            </div>
+            <div class="input">
+                <input  name="content" placeholder="내용을 입력하세요"/>
+            </div>
+            <div class="input btn_box right">
+                <button type="submit" class="save">저장</button>
+                <button type="reset" class="reset">새로작성</button>
+                <button type="button" class="list">리스트로</button>
+            </div>
+        </fieldset>
+    </form>
+</section>
+
+</html>
