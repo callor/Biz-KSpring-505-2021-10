@@ -13,13 +13,15 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     database: mysql
     show-sql: true
-#    properties:
-#      ddl-auto: create
+
+    # table 생성 정책
     hibernate:
       ddl-auto: create
 
-
-
+    # SQL Show pretty formatter 설정
+    properties:
+      hibernate:
+        format_sql: true
 
   datasource:
     url: jdbc:mysql://localhost:3306/naraDB

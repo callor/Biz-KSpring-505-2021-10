@@ -1,0 +1,29 @@
+<html lang="ko"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}"
+>
+<section layout:fragment="content" class="content">
+    <form method="POST" class="login_form">
+        <fieldset>
+            <input type="hidden"
+                   th:name="*{_csrf.parameterName}"
+                   th:value="*{_csrf.token}"/>
+            <div class="input">
+                <input placeholder="USERNAME"/>
+            </div>
+            <div class="input">
+                <input placeholder="PASSWORD" type="password"/>
+            </div>
+            <div class="input">
+                <div>
+                    <input type="checkbox"/>
+                    <label>ID 기억하기</label>
+                </div>
+            </div>
+            <div class="input btn_box left">
+                <button class="btn login">로그인</button>
+            </div>
+        </fieldset>
+    </form>
+</section>
+</html>
