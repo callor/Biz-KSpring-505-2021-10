@@ -20,3 +20,15 @@ Spring Seuciry 는 초기 설정이 다소 어렵고 불편하지만, 초기 설
 USER(일반) 이다 : mypage 에서 자신의 정보를 보기, 수정, 삭제 등을 할수 잇게 한다
 ADMIN(관리자) 도 포함되어 있다 : 자신의 mypage 에 접근 할수 있고, 다른 USER의 리스트를 보고  
 뭔가 실행을 할 수 있다.
+
+# Spring Security 를 사용한 Login 구현
+* SecurityConfig(WebSecurityConfigureAdapter 상속) 에 설정을 하여 login form 을 custom 할 수 있다.
+* 이때 login form 의 method 는 반드시 post 로 action=${rootPath}/login 으로 설정      
+  즉, security 에서 제공하는 loginProcessor Url 로 login 정보를 request 하기  
+  Spring security 에서 기본으로 제공하는 login 기능을 사용하겠다 라는 의미
+* 기본 login 기능은 username 과 password 값을 받아서 인증 절차를 수행한다
+* 만약 인증절차가 실패(username 이 없거나, password 가 틀리면) 하면
+* 무조건 원래의 login(/member/login) 으로 redirect 한다
+* 이때, error 라는 매개변수(params)를 전달한다
+* thymeleaf 로 만든 login form 에서는 th:if="${param.login}" 코드를 사용하여
+* 오류가 발생했음을 view 에 보여줄 수 있다 
