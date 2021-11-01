@@ -32,3 +32,46 @@ ADMIN(관리자) 도 포함되어 있다 : 자신의 mypage 에 접근 할수 �
 * 이때, error 라는 매개변수(params)를 전달한다
 * thymeleaf 로 만든 login form 에서는 th:if="${param.login}" 코드를 사용하여
 * 오류가 발생했음을 view 에 보여줄 수 있다 
+
+# Spring Security login LOGIC 흐름
+1. authenticated 가 설정된 page 에 접근(Request)
+2. login 정보가 있는지 확인 ?
+3. 없으면 loginPage() 설정된 곳으로 redirect : login.html
+4. 로그인 수행 : ${rootPath}/login 으로 POST 전송
+5. configure(auth: AuthenticationManagerBuilder) 에 설정된 동작 수행
+6. auth.userDetailsService(MemberLoginService()) 설정을 확인
+   1. MemberLoginService() 클래스가 지정되어 있다
+   2. 이 클래스는 
+   UserDetailsService interface 를 상속받아 작성된 클래스이다
+   3. 이 클래스의 loaduserByUserName() method를 실행한다
+   4. loaduserByUserName() method는 username 을 기준으로
+   5. 사용자 정보를 조회하여 MemberVO 객체 데이터를 만든다
+   6. 그리고 configure 의 auth 에게 MemberVO를 전달한다
+
+# login 수행절차
+1. localhost:8080/member/mypage 에 접근하려고 시도
+2. 순간 controller 로 전달되기 전에 security 의 filter 가 가로채기
+3. SecurityConfig.configure(http:...) 함수를 참조하여
+4. authenticated() 가 설정되어 있는지 확인 : YES
+5. 기존의 로그인한 정보(HttpSession) 가 있는지 내부적으로 검사 : NO
+6. http.login().loginPage() 에 설정된 URL 로 redirect 한다
+7. MemberController.login() 에 의해 member/login.html 을 보여준다
+8. username, password 를 입력하고 "로그인" 버튼 클릭
+9. 보통은 form 에 데이터를 입력하고 "저장" 버튼을 클릭 하면
+10. Controller 의 POST method 에 전달된다
+11. 하지만 Spring Security 가 적용된 프로젝트의 로그인은 그렇지 않다
+12. Spring Security 가 제공하는 loginProcessor 에게 전달된다
+13. username 을 UserDetailsService.loadUserByUserName() 에게 보내서
+14. username 에 해당하는 사용자 정보를 추출하여 auth 에게 전달
+15. auth 는 PasswordEncoder.matches() 에게 비번을 전달하여
+16. 비번이 일치하는지 검사한다
+17. 모두 일치하면 사용자 정보를 session 에 저장하고 로그인 절차 완료
+
+
+
+
+
+
+
+
+

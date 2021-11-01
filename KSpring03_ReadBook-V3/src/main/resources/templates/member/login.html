@@ -13,6 +13,11 @@
             <div class="input error" th:if="${param.error}">
                 로그인 실패 : 사용자 ID 또는 비밀번호 오류
             </div>
+
+            <div class="input error"
+                 th:if="${session?.SPRING_SECURITY_LAST_EXCEPTION?.message}"
+                 th:text="${session?.SPRING_SECURITY_LAST_EXCEPTION?.message}">
+            </div>
             <div class="input">
                 <input placeholder="USERNAME" name="username"/>
             </div>

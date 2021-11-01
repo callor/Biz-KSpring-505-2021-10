@@ -1,4 +1,4 @@
-package com.callor.readbook
+package com.callor.readbook.models
 
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
@@ -24,7 +24,7 @@ data class MemberVO(
     override fun isCredentialsNonExpired(): Boolean = credentialNonExpired
     override fun isAccountNonLocked(): Boolean = accountNotLocked
 
-    override fun getAuthorities(): MutableCollection<out GrantedAuthority> = authorities
+    override fun getAuthorities(): Collection<GrantedAuthority> = authorities
     fun setAuthorities(authorities: Collection<GrantedAuthority>) {
         this.authorities = authorities
     }
