@@ -1,0 +1,34 @@
+<html lang="ko"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}"
+>
+<section layout:fragment="content" class="content">
+    <form method="POST" class="login_form" th:action="@{/login}">
+        <fieldset>
+            <!--
+            th:if="@{변수}"
+            변수값이 있으면(not null) 이면 해당 tag 를 화면에 그리고
+            그렇지 않으면 해당 tag 를 아예 그리지 말라
+            -->
+            <div class="input error" th:if="${param.error}">
+                로그인 실패 : 사용자 ID 또는 비밀번호 오류
+            </div>
+            <div class="input">
+                <input placeholder="USERNAME" name="username"/>
+            </div>
+            <div class="input">
+                <input placeholder="PASSWORD" type="password" name="password"/>
+            </div>
+            <div class="input">
+                <div>
+                    <input type="checkbox"/>
+                    <label>로그인 유지하기(Remember ME)</label>
+                </div>
+            </div>
+            <div class="input btn_box left">
+                <button class="btn login">로그인</button>
+            </div>
+        </fieldset>
+    </form>
+</section>
+</html>

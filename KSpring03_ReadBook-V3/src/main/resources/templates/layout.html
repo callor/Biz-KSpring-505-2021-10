@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script th:inline="javascript">
+        const rootPath = /*[[@{/}]]*/
+    </script>
+    <link rel="stylesheet" th:href="@{/static/css/main.css}">
+    <link rel="stylesheet" th:href="@{/static/css/form.css}">
+    <title>똑소리 독서록</title>
+</head>
+<body>
+    <th:block th:replace="fragment/headerAndFooter :: headerFragment"></th:block>
+    <th:block layout:fragment="content"></th:block>
+    <th:block th:replace="fragment/headerAndFooter :: footerFragment"></th:block>
+</body>
+</html>
